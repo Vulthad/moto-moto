@@ -1,4 +1,4 @@
-//program optymalizacyjny wyznaczaj¹cy najwiêksze pole na podstawie podanego obwodu prostokata
+//program optymalizacyjny wyznaczajÄ…cy najwiÄ™ksze pole na podstawie podanego obwodu prostokata
 
 #include <iostream>
 #include <string>
@@ -7,7 +7,7 @@
 
 using namespace std;
 
-bool czy_int(string dana)									//funkcja weryfikuj¹ca, czy wprowadzona liczba jest ca³kowita i ogóln¹ poprawnoœæ; sprawdzanie po kolei wprowadzonych znaków
+bool czy_int(string dana)									//funkcja weryfikujÄ…ca, czy wprowadzona liczba jest caÅ‚kowita i ogÃ³lnÄ… poprawnoÅ›Ä‡; sprawdzanie po kolei wprowadzonych znakÃ³w
 {
 	for(int i=0; i<dana.length();i++)
 	{
@@ -20,11 +20,11 @@ bool czy_int(string dana)									//funkcja weryfikuj¹ca, czy wprowadzona liczba
 	return true;
 }
 
-void algorytm(int dlugosc, int *a, int *b, int *pole)	//funkcja obliczaj¹ca wymiary obszaru
+void algorytm(int dlugosc, int *a, int *b, int *pole)	//funkcja obliczajÄ…ca wymiary obszaru
 {
-	*a= dlugosc / 4;									//wynik porównania pochodnej z a(dlugosc-2*a) do zera
-	*b= dlugosc - 2 * *a;								//dlugosc drugiego boku wynika z obwodu prostok¹ta
-	*pole = *a * *b;									//wzór na pole obszaru prostok¹ta, mo¿e te¿ byæ uzyskany analitycznie - (dlugosc * *a)-(2 * pow(*a, 2))
+	*a= dlugosc / 4;									//wynik porÃ³wnania pochodnej z a(dlugosc-2*a) do zera
+	*b= dlugosc - 2 * *a;								//dlugosc drugiego boku wynika z obwodu prostokÄ…ta
+	*pole = *a * *b;									//wzÃ³r na pole obszaru prostokÄ…ta, moÅ¼e teÅ¼ byÄ‡ uzyskany analitycznie - (dlugosc * *a)-(2 * pow(*a, 2))
 }
 
 bool menu()												//true na wyjscie z petli, false na zostanie											
@@ -33,10 +33,10 @@ bool menu()												//true na wyjscie z petli, false na zostanie
 	int max_dlugosc, max_pole;
 	int a, b;
 	
-	cout<<"Program do obliczania wymiarow dzialki - wpisz \"RUN\" by uruchomiæ algorytm; \"STOP\" by wylaczyc program"": "<<endl;
+	cout<<"Program do obliczania wymiarow dzialki - wpisz \"RUN\" by uruchomiÄ‡ algorytm; \"STOP\" by wylaczyc program"": "<<endl;
 	cin>>wejscie;
 	
-	transform(wejscie.begin(), wejscie.end(), wejscie.begin(), ::toupper); 	//zamiana na du¿e litery wpisanego tekstu by wpisanie np. "run" te¿ uruchomi³o algorytm; pêtla for i toupper na kazdy znak daje to samo
+	transform(wejscie.begin(), wejscie.end(), wejscie.begin(), ::toupper); 	//zamiana na duÅ¼e litery wpisanego tekstu by wpisanie np. "run" teÅ¼ uruchomiÅ‚o algorytm; pÄ™tla for i toupper na kazdy znak daje to samo
 	
 	
 	if(wejscie.compare("RUN")==0)
@@ -46,7 +46,7 @@ bool menu()												//true na wyjscie z petli, false na zostanie
 		cin>>wejscie;
 		
 		
-		max_dlugosc=atoi(wejscie.c_str());									//normalnie przez stoi() ale uparcie wychodzi³ b³¹d, ¿e "stoi not included in this scope", prawdopodobnie coœ z kompilatorem(?)
+		max_dlugosc=atoi(wejscie.c_str());									//normalnie przez stoi() ale uparcie wychodziÅ‚ bÅ‚Ä…d, Å¼e "stoi not included in this scope", prawdopodobnie coÅ› z kompilatorem(?)
 		
 		if(czy_int(wejscie)==true && max_dlugosc>0)							
 		{
@@ -82,6 +82,8 @@ int main()
 {
 	
 	while(menu()!=true){}
+	
+	system("pause");
 	return 0;
 	
 }
